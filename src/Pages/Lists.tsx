@@ -1,5 +1,4 @@
 import React, { ChangeEvent, ChangeEventHandler, useEffect, useState } from 'react';
-import TodoTask from '../Components/TodoTask';
 import baseURL from "../requests/BaseURL";
 import endpoints from '../requests/EndPoints';
 import { List } from '../Interfaces';
@@ -23,7 +22,8 @@ const Lists:React.FC = () =>{
     const postList = async() => {
         let data = {
             name:title,
-            description:desc
+            description:desc,
+            tasks:[]
         }
 
         try {
@@ -54,10 +54,10 @@ const Lists:React.FC = () =>{
             <div className='col-10'>
                 {
                     lists&&lists.map((item, i) => 
-                    <div key={item.id}>
-                        <p>{item.name}</p>
+                    <Link to={`/to-do-list-details/${item.id}/update`}><div  key={item.id}>
+                    <p>{item.name}</p>
 
-                    </div>
+                </div></Link>
                     )
                 }
             </div>

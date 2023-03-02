@@ -3,45 +3,44 @@
     {
       "id": 1,
       "name": "List one",
-      "description": "List one description"
+      "description": "List one description",
+      "tasks": []
     },
     {
       "name": "List two",
       "description": "List two description",
+      "tasks": [
+        {
+          "name": "fghjvbn",
+          "details": "",
+          "due_date": "vbnm",
+          "status": false
+        },
+        {
+          "name": "hbjnkbnm",
+          "details": "",
+          "due_date": "wedfgbhjkovbn",
+          "status": false
+        }
+      ],
       "id": 2
     },
     {
-      "name": "Task 3",
-      "description": "descc",
+      "name": "task test",
+      "description": "desc",
+      "tasks": [],
       "id": 3
     },
     {
-      "name": "task 44",
-      "description": "fghjk",
+      "name": "cgvh",
+      "description": "fcghvjb",
       "id": 4
     },
     {
-      "name": "task 45",
-      "description": "fghjk",
+      "name": "v m",
+      "description": "ghj",
+      "tasks": [],
       "id": 5
-    }
-  ],
-  "tasks": [
-    {
-      "id": 1,
-      "name": "Task one",
-      "due_date": "4 March",
-      "details": "task one details",
-      "status": "incomplete",
-      "listId": 1
-    },
-    {
-      "name": "Task two",
-      "due_date": "4 March",
-      "details": "task one details",
-      "status": "incomplete",
-      "listId": "1",
-      "id": 2
     }
   ]
 }

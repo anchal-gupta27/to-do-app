@@ -3,10 +3,10 @@ import { TaskItem } from "../Interfaces";
 
 interface Props {
     task: TaskItem;
-    completeTask(taskNameToDelete:string):void;
+    deleteTask(taskNameToDelete:string):void;
 }
 
-const TodoTask = ({task, completeTask}:Props) => {
+const TodoTask = ({task, deleteTask}:Props) => {
     return (
         <div className="task d-flex">
             <div className="content d-flex">
@@ -16,7 +16,7 @@ const TodoTask = ({task, completeTask}:Props) => {
 
             </div>
             <button onClick={() => {
-                completeTask(task.name)
+                deleteTask(task.name)
             }}>
 X
             </button>

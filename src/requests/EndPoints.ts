@@ -1,5 +1,6 @@
 const endpoints = {
-    lists: "lists"
+    lists: "lists",
+    tasks: "tasks"
 }
 
 export default endpoints;

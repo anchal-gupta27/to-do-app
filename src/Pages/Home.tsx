@@ -1,20 +1,37 @@
 import React, { ChangeEvent, ChangeEventHandler, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import TodoTask from '../Components/TodoTask';
 import { TaskItem } from '../Interfaces';
+import baseURL from "../requests/BaseURL";
+import endpoints from '../requests/EndPoints';
+import { List } from '../Interfaces';
 
 const Home:React.FC = () =>{ 
 
-    const [title, setTitle] = useState("Untitled")
-    const [description, setDescription] = useState("Description....")
     const [item, setItem] = useState<string>("")
     const [details, setDetails] = useState<string>("")
     const [dueDate, setDueDate] = useState<string>("")
     const [list, setList] = useState<TaskItem[]>([])
+    const [listData, setListData] = useState<List>({
+        name:"undefined",
+        id: "0",
+        description:"description",
+        tasks:[]
+
+    })
+    const {id} = useParams();
 
     useEffect(() => {
         const fetchListDetails = async () => {
-            
+            try {
+                const res = await baseURL.get(`${endpoints.lists}/${id}`)
+                setListData(res.data)
+                setList(res.data.tasks)
+            } catch (error) {
+                
+            }
         }
+        fetchListDetails()
     },[])
 
     const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
@@ -29,24 +46,51 @@ const Home:React.FC = () =>{
         
     }
 
+    const updateList = async (data:object) => {
+
+        
+
+        try{
+            const res = await baseURL.put(`${endpoints.lists}/${id}`, data)
+        } catch(error) {
+
+        }
+    }
+
     const setItemInList = () => {
        const newTask = {
         name: item,
         details: details,
         due_date: dueDate,
-        status: "incomplete"
+        status: false
        }
-
        setList([...list, newTask]);
+       updateList({
+        name: listData.name,
+        description: listData.description,
+        tasks: [...list, newTask]
+       })
        setItem("");
+       setDetails("");
+       setDueDate("");
        console.log(list)
     }
 
-    const completeTask = (taskNameToDelete:string) => {
-        setList(list.filter((item) => {
-            return item.name != taskNameToDelete
-        }))
+    const deleteTask = (taskNameToDelete:string) => {
+
+       let newList = list.filter((item) => {
+        return item.name != taskNameToDelete
+    })
+
+        setList(newList)
+        updateList({
+            name:listData.name,
+            description:listData.description,
+            tasks: newList
+        })
     }
+
+
 
     return (
        <div>
@@ -54,8 +98,8 @@ const Home:React.FC = () =>{
         <div className='row'>
             <div className='col-3'>
             <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
+            <h1>{listData.name}</h1>
+            <p>{listData.description}</p>
 
             
             <input 
@@ -91,7 +135,7 @@ const Home:React.FC = () =>{
             <div>
                 {
                     list && list.map((item:TaskItem, key:number) => 
-                       <TodoTask key={key} task={item} completeTask={completeTask} />
+                       <TodoTask key={key} task={item} deleteTask={deleteTask} />
                     )
                 }
             </div>
