@@ -1,0 +1,20 @@
+{
+    "lists":[
+        {
+            "id":1,
+            "name":"List one",
+            "Description":"List one description"
+        }
+    ],
+    "tasks":[
+       {
+        "task_id":1,
+        "name":"Task one",
+        "due_date": "4 March",
+        "Details":"task one details",
+        "status":"incomplete",
+        "list_id":1
+       }
+
+    ]
+}

@@ -1,0 +1,47 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "name": "List one",
+      "description": "List one description"
+    },
+    {
+      "name": "List two",
+      "description": "List two description",
+      "id": 2
+    },
+    {
+      "name": "Task 3",
+      "description": "descc",
+      "id": 3
+    },
+    {
+      "name": "task 44",
+      "description": "fghjk",
+      "id": 4
+    },
+    {
+      "name": "task 45",
+      "description": "fghjk",
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task one",
+      "due_date": "4 March",
+      "details": "task one details",
+      "status": "incomplete",
+      "listId": 1
+    },
+    {
+      "name": "Task two",
+      "due_date": "4 March",
+      "details": "task one details",
+      "status": "incomplete",
+      "listId": "1",
+      "id": 2
+    }
+  ]
+}
