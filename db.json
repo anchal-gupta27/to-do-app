@@ -1,10 +1,23 @@
 {
   "lists": [
     {
-      "id": 1,
       "name": "List one",
       "description": "List one description",
-      "tasks": []
+      "tasks": [
+        {
+          "name": "task 1",
+          "details": "",
+          "due_date": "today",
+          "status": false
+        },
+        {
+          "name": "task 2",
+          "details": "",
+          "due_date": "today",
+          "status": false
+        }
+      ],
+      "id": 1
     },
     {
       "name": "List two",
@@ -26,21 +39,23 @@
       "id": 2
     },
     {
-      "name": "task test",
-      "description": "desc",
-      "tasks": [],
+      "name": "List three",
+      "description": "this is the description",
+      "tasks": [
+        {
+          "name": "task 1",
+          "details": "",
+          "due_date": "today",
+          "status": false
+        },
+        {
+          "name": "task 2",
+          "details": "",
+          "due_date": "ghm",
+          "status": false
+        }
+      ],
       "id": 3
-    },
-    {
-      "name": "cgvh",
-      "description": "fcghvjb",
-      "id": 4
-    },
-    {
-      "name": "v m",
-      "description": "ghj",
-      "tasks": [],
-      "id": 5
     }
   ]
 }

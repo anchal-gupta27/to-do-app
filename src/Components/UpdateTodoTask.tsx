@@ -1,5 +1,8 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import { TaskItem } from "../Interfaces";
+import {MdDeleteForever} from 'react-icons/md';
+import {GrEdit} from 'react-icons/gr';
+import "../Assets/css/UpdateLists.css"
 
 interface Props {
     index:Number;
@@ -39,57 +42,74 @@ const UpdateTodoTask = ({index, task, deleteTask, taskCompleted, editTask}:Props
     }
 
     return (
-        <div className="task d-flex">
-        <div className="content d-flex">
-            <input
+        <>
+             <tr>
+       
+           
+            <td style = {status ? {background:"#81db81"}: {}}><input
             type="checkbox"
             name="status"
             id="status"
             checked={status}
             onChange={taskStatus}
-             />
+             /></td>
            {
-            !edit && <div>
-                 <span>{name}</span>
-            <span>{dueDate}</span>
-            <span>{status?"Completed":"Pending"}</span>
-            <button onClick={() => {setEdit(true)}}>
-            edit
-        </button>
-            </div>
+            !edit &&
+            <>
+            <td style = {status ? {background:"#81db81", textDecoration:"line-through",width:175}: { width:175}}><span>{name}</span></td>
+         <td style = {status ? {background:"#81db81",width:100}: {width:100}}>   <span>{dueDate}</span></td>
+         <td style = {status ? {background:"#81db81"}: {}}> <span>{status?"Completed":"Pending"}</span></td>
+            <td style = {status ? {background:"#81db81"}: {}}><button style={{background:"none",border:"none",fontSize:"15px"}}onClick={() => {setEdit(true)}}>
+            <GrEdit/>
+        </button></td>
             
+            </>
 
            }
+           
            {
-            edit&& <div>
+            edit&& 
 
-                <input 
+               <td style={{width:175}} > <input 
                     type="text"
                     name="taskName"
                     placeholder="Task name"
                     value={name}
                     onChange={handleChange}
-                />
-                <input 
-                    type="text"
-                    name="dueDate"
-                    placeholder="Duedate"
-                    value={dueDate}
-                    onChange={handleChange}
-                />
+                /></td>
+             
 
-                <button onClick={() => {setEdit(false); editTask(name,dueDate,index)}}>Done</button>
-            </div>
+               
            }
 
-        </div>
+           {
+            edit &&   <td> <input 
+            type="text"
+            name="dueDate"
+            placeholder="Duedate"
+            value={dueDate}
+            onChange={handleChange}
+        /></td>
+           }
+
+           {
+            edit && <td style = {status ? {background:"#81db81"}: {}}> <span>{status?"Completed":"Pending"}</span></td>
+           }
+
+           {
+            edit &&  <td><button onClick={() => {setEdit(false); editTask(name,dueDate,index)}}>Done</button></td>
+            
+           }
+
+      
         
-        <button onClick={() => {
+        <td style = {status ? {background:"#81db81"}: {}}><button style={{background:"none",border:"none", fontSize:19}} onClick={() => {
             deleteTask(task.name)
         }}>
-X
-        </button>
-    </div>
+<MdDeleteForever/>
+        </button></td>
+        </tr>
+    </>
     )
 
 }

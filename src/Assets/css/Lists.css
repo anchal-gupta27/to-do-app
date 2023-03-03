@@ -1,0 +1,73 @@
+.create-list {
+    padding: 2% 5%;
+    background: #efe3f8;
+    height: 100vh;
+}
+
+.lists a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.lists h2 {
+    color: #6d21d3;
+    text-align: center;
+}
+
+.lists .list-items {
+    width: 100%;
+}
+
+.lists .list-container {
+    padding: 10px 10px;
+    border: 1px solid #812fc9;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 2% 5%;
+    width: 70%;
+}
+
+.lists .list-container:hover {
+    background-color: white;
+    color: black;
+   
+}
+
+.list-form {
+    margin: 15% 0 0 0;
+    background: #8568bf;
+    border: none;
+    color: white;
+    padding: 10% 5%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.list-form .list-form-item  {
+    margin: 10px 0;
+}
+
+.list-form .list-form-item input {
+    background: #e1e1fa;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.list-form button {
+    margin: 10% 0 0 0;
+    background: #302f32;
+    border: none;
+    color: white;
+    padding: 3% 5%;
+    border-radius: 15px;
+}

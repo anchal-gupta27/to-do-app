@@ -5,6 +5,10 @@ import { TaskItem } from '../Interfaces';
 import baseURL from "../requests/BaseURL";
 import endpoints from '../requests/EndPoints';
 import { List } from '../Interfaces';
+import {MdOutlineArrowBackIos} from 'react-icons/md'
+import "../Assets/css/Home.css";
+import "../Assets/css/UpdateLists.css"
+import { Link } from 'react-router-dom';
 
 const Home:React.FC = () =>{ 
 
@@ -93,31 +97,50 @@ const Home:React.FC = () =>{
 
 
     return (
-       <div>
-
+       <div className='home'>
+        <Link to={"/"}> <MdOutlineArrowBackIos style={{fontSize:25}}/></Link>
         <div className='row'>
-            <div className='col-3'>
-            <div>
+            <div className='col-8'>
             <h1>{listData.name}</h1>
             <p>{listData.description}</p>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            
+                            <th>Task</th>
+                            <th>Due date</th>
+                            <th></th>
+                        </tr>
+                        {
+                    list && list.map((item:TaskItem, key:number) => 
+                       <TodoTask key={key} task={item} deleteTask={deleteTask} />
+                    )
+                }
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div className='col-4'>
+           
+            <div>
+   
 
-            
-            <input 
+            <div className='list-form'>
+                <h3>Add the tasks</h3>
+                <div className='list-form-item'>
+                    <label>Enter the task name</label>
+                    <input 
             type="text"  
             name="task"
             placeholder='Add a task'
             value = {item}
             onChange={handleChange}
             />
-            <input 
-                type="text"
-                name="details"
-                placeholder='Add the description'
-                value={details}
-                onChange={handleChange}
-
-            />
-            <input 
+                </div>
+                <div className='list-form-item'>
+                    <label>Enter the duedate</label>
+                    <input 
                 type="text"
                 name="duedate"
                 placeholder='Add a deadline'
@@ -125,21 +148,19 @@ const Home:React.FC = () =>{
                 onChange={handleChange}
 
             />
-            <button onClick={setItemInList}>
-                Add
+
+                </div>
+                <button onClick={setItemInList}>
+                Submit
             </button>
+            </div>
+            
+           
+           
+            
+            
            
         </div>
-            </div>
-            <div className='col-9'>
-            <div>
-                {
-                    list && list.map((item:TaskItem, key:number) => 
-                       <TodoTask key={key} task={item} deleteTask={deleteTask} />
-                    )
-                }
-            </div>
-
             </div>
 
         </div>

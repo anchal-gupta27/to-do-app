@@ -1,10 +1,14 @@
 import React, { ChangeEvent, ChangeEventHandler, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import baseURL from "../requests/BaseURL";
 import endpoints from '../requests/EndPoints';
 import { List } from '../Interfaces';
 import { TaskItem } from '../Interfaces';
 import UpdateTodoTask from '../Components/UpdateTodoTask';
+import {GrEdit} from 'react-icons/gr';
+import "../Assets/css/UpdateLists.css"
+import {MdOutlineArrowBackIos} from 'react-icons/md';
+import { Draggable } from "react-drag-reorder";
 
 const UpdateLists:React.FC = () =>{ 
 
@@ -126,15 +130,18 @@ const UpdateLists:React.FC = () =>{
         console.log(list)
      }
 
-    return<div>
+    return<div className='update-lists'>
+         <Link to={"/"}> <MdOutlineArrowBackIos style={{fontSize:25}}/></Link>
         <div className='row'>
             <div className='col-9'>
-               <div>
+               <div className='list-details'>
                {
-                    !editName && <span><h1>{name} </h1> <button onClick={() => setEditName(true)}>edit</button></span>
+                    !editName && <span className='d-flex list-name'>
+                        <h2>{name} </h2> 
+                        <button style={{background:"none",border:"none",fontSize:"25px"}} onClick={() => setEditName(true)}><GrEdit/></button></span>
                 }
                 {
-                    editName && <span><input 
+                    editName && <span className='edit-list-name'><input 
                         type="text"
                         name="listName"
                         placeholder='Add a name'
@@ -149,10 +156,11 @@ const UpdateLists:React.FC = () =>{
                </div>
                <div>
                {
-                    !editDesc && <span><h1>{description} </h1> <button onClick={() => setEditDesc(true)}>edit</button></span>
+                    !editDesc && <span className='d-flex list-desc'><p className='mb-0 mr-4'>{description} </p>
+                     <button style={{background:"none",border:"none"}} onClick={() => setEditDesc(true)}><GrEdit/></button></span>
                 }
                 {
-                    editDesc && <span><input 
+                    editDesc && <span className='edit-list-desc'><input 
                         type="text"
                         name="listDesc"
                         placeholder='Description...'
@@ -166,23 +174,53 @@ const UpdateLists:React.FC = () =>{
                 }
                </div>
                <div>
+              <table>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>Task</th>
+                        <th>Due date</th>
+                        <th> Status</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                
                 {
                     list && list.map(((item:TaskItem, key:number) =>
-                        <UpdateTodoTask key={key} index={key} task={item} deleteTask={deleteTask} editTask={editTask} taskCompleted={taskCompleted}/>
+                        <UpdateTodoTask 
+                        key={key} 
+                        index={key} 
+                        task={item} 
+                        deleteTask={deleteTask} 
+                        editTask={editTask} 
+                        taskCompleted={taskCompleted}/>
                     ))
                 }
+               
+                </tbody>
+              </table>
                </div>
 
             </div>
             <div className='col-3'>
-                <input 
+
+                <div className='task-form'>
+                    <h3>Add the tasks</h3>
+                    <div className='task-form-item'>
+                        <label>Enter the task name</label>
+                        <input 
                     type="text"  
                     name="task"
                     placeholder='Add a task'
                     value = {item}
                     onChange={handleItemChange}
                 />
-                  <input 
+
+                    </div>
+                    <div className='task-form-item'>
+                        <label>Enter the duedate</label>
+
+                        <input 
                 type="text"
                 name="duedate"
                 placeholder='Add a deadline'
@@ -190,9 +228,15 @@ const UpdateLists:React.FC = () =>{
                 onChange={handleItemChange}
 
             />
-             <button onClick={setItemInList}>
-                Add
+
+                    </div>
+                    <button onClick={setItemInList}>
+                Submit
             </button>
+                </div>
+               
+                  
+            
             </div>
            
 

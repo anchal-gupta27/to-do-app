@@ -1,0 +1,110 @@
+.update-lists {
+    padding: 2% 5%;
+    height: 100vh;
+    background: #efe3f8;
+}
+
+.update-lists .list-name h2 {
+    padding: 1% 2% 0 0;
+    font-size: 26px;
+    margin: 10px 15px 10px 0;
+} 
+
+.update-lists .edit-list-name input {
+    padding: 1% 2% 0 0;
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 26px;
+    margin: 10px 15px 10px 0;
+}
+
+.update-lists .edit-list-name button {
+    
+    background: #302f32;
+    border: none;
+    color: white;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.update-lists .list-desc p {
+    padding: 1% 2% 0 0;
+    margin: 10px 15px 10px 0;
+}
+
+.update-lists .edit-list-desc input {
+    padding: 1% 2% 0 0;
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 10px 15px 10px 0;
+}
+
+.update-lists .edit-list-desc button {
+    background: #302f32;
+    border: none;
+    color: white;
+    padding: 1%;
+    border-radius: 5px;   
+}
+
+table {
+    width: 80%;
+    margin: 20px 0;
+    border: 1px solid purple;
+    border-radius: 15px;
+}
+
+table td, th {
+    padding: 2%;
+}
+
+table th {
+    background-color: black;
+    color: white;
+}
+
+table td {
+    border-top: 1px solid purple;
+    width: 100px;
+}
+
+table td input {
+    width: 100%;
+}
+
+.task-form {
+    margin: 15% 0 0 0;
+    background: #8568bf;
+    border: none;
+    color: white;
+    padding: 10% 5%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-form .task-form-item {
+    margin: 10px 0;
+}
+
+.task-form .task-form-item input {
+    background: #e1e1fa;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.task-form button {
+    margin: 10% 0 0 0;
+    background: #302f32;
+    border: none;
+    color: white;
+    padding: 3% 5%;
+    border-radius: 15px;
+}

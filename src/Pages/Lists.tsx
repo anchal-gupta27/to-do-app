@@ -3,6 +3,7 @@ import baseURL from "../requests/BaseURL";
 import endpoints from '../requests/EndPoints';
 import { List } from '../Interfaces';
 import { Link } from 'react-router-dom';
+import "../Assets/css/Lists.css"
 
 const Lists:React.FC = () =>{ 
 
@@ -49,20 +50,32 @@ const Lists:React.FC = () =>{
         fetchLists()
     },[])
 
-    return <div>
+    return <div className='create-list'>
         <div className='row'>
-            <div className='col-10'>
-                {
+            <div className='col-8 lists'>
+
+             <div>
+             <h2>Continue where you left!</h2>
+               <div className='list-items'>
+               {
                     lists&&lists.map((item, i) => 
-                    <Link to={`/to-do-list-details/${item.id}/update`}><div  key={item.id}>
-                    <p>{item.name}</p>
+                    <Link to={`/to-do-list-details/${item.id}/update`}>
+                        <div  
+                        className='list-container'
+                        key={item.id}>
+                    <p className='mb-0'>{item.name}</p>
 
                 </div></Link>
                     )
                 }
+               </div>
+             </div>
             </div>
-            <div className='col-2'>
-                <p>Create a to-do List!!</p>
+            <div className='col-4'>
+                <div className='list-form'>
+                <h3>Create a to-do List!!</h3>
+                <div className='list-form-item'>
+                <label>Enter name of the list</label>
                 <input 
             type="text"  
             name="title"
@@ -70,6 +83,9 @@ const Lists:React.FC = () =>{
             value = {title}
             onChange={handleChange}
             />
+                </div>
+           <div className='list-form-item'>
+           <label>Enter the description</label>
             <input 
                 type="text"
                 name="desc"
@@ -78,7 +94,9 @@ const Lists:React.FC = () =>{
                 onChange={handleChange}
 
             />
-            <button onClick={() => postList()}>Create a To-do List</button>
+           </div>
+            <button onClick={() => postList()}>Submit</button>
+                </div>
             </div>
 
 
