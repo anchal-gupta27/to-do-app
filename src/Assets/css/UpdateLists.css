@@ -10,6 +10,14 @@
     color: var(--light-theme-primary-text);
 }
 
+.light .update-lists .edit-button {
+    background: none;
+    border: none;
+    color: var(--dark-theme-primary-text);
+   height: max-content;
+    border-radius: 5px;
+}
+
 .light .update-lists .list-name h2 {
     padding: 1% 2% 0 0;
     font-size: 26px;

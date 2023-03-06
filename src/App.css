@@ -16,9 +16,21 @@
 }
 
 
-.toggle-button {
+
+.light .toggle-button {
   position: absolute;
   top: 2%;
   right: 2%;
   border-radius: 20px;
+  background-color: var(--light-theme-primary-background);
+  color: var(--light-theme-primary-text);
+}
+
+.dark .toggle-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border-radius: 20px;
+  background-color: var(--dark-theme-primary-background);
+  color: var(--dark-theme-primary-text);
 }

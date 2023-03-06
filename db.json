@@ -1,38 +1,6 @@
 {
   "lists": [
     {
-      "name": "List two v1wwww",
-      "description": "List two description",
-      "tasks": [
-        {
-          "name": "task 1",
-          "details": "",
-          "due_date": "today",
-          "status": false
-        }
-      ],
-      "id": 2
-    },
-    {
-      "name": "List three",
-      "description": "this is the description",
-      "tasks": [
-        {
-          "name": "task 1",
-          "details": "",
-          "due_date": "today",
-          "status": false
-        },
-        {
-          "name": "task 2",
-          "details": "",
-          "due_date": "ghm",
-          "status": false
-        }
-      ],
-      "id": 3
-    },
-    {
       "name": "Homeeee",
       "description": "Work to be completed at home",
       "tasks": [
@@ -40,7 +8,7 @@
           "name": "Cleaningggg",
           "details": "",
           "due_date": " 5pm",
-          "status": true
+          "status": false
         },
         {
           "name": "Cooking",
@@ -52,13 +20,13 @@
       "id": 4
     },
     {
-      "name": "list one ",
-      "description": "fghjk",
+      "name": "Work",
+      "description": "Work related tasks",
       "tasks": [
         {
-          "name": "hbjkl",
+          "name": "task 1",
           "details": "",
-          "due_date": "bnm,",
+          "due_date": "Today",
           "status": false
         }
       ],

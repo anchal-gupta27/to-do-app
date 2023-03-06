@@ -173,7 +173,7 @@ const UpdateLists: React.FC = () => {
                     {
                         !editName && <span className='d-flex align-items-center list-name'>
                             <h2>{name} </h2>
-                            <button  className='edit-button' style={{ fontSize: "25px" }} onClick={() => setEditName(true)}><GrEdit/></button></span>
+                            <button className='edit-button' style={{ fontSize: "25px" }} onClick={() => setEditName(true)}><GrEdit /></button></span>
                     }
                     {
                         editName && <span className='edit-list-name'><input
@@ -192,7 +192,7 @@ const UpdateLists: React.FC = () => {
                 <div className='list-details'>
                     {
                         !editDesc && <span className='d-flex align-items-center list-desc'><p className='mb-0 mr-4'>{description} </p>
-                            <button  className='edit-button'  onClick={() => setEditDesc(true)}><GrEdit className='edit-button' /></button></span>
+                            <button className='edit-button' onClick={() => setEditDesc(true)}><GrEdit className='edit-button' /></button></span>
                     }
                     {
                         editDesc && <span className='edit-list-desc'><input
