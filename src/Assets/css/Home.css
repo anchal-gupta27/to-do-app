@@ -1,6 +1,13 @@
-.home {
+@import url("../../App.css");
+
+.light .home {
     padding: 2% 5%;
-    background: #efe3f8;
+    background: var(--light-theme-primary-background);
     height: 100vh;
 }
 
+.dark .home {
+    padding: 2% 5%;
+    background: var(--dark-theme-primary-background);
+    height: 100vh;
+}

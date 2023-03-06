@@ -1,16 +1,31 @@
-.update-lists {
+@import url("../../App.css");
+
+.light .update-lists {
     padding: 2% 5%;
     height: 100vh;
-    background: #efe3f8;
+    background: var(--light-theme-primary-background);
 }
 
-.update-lists .list-name h2 {
+.light .update-lists .list-name {
+    color: var(--light-theme-primary-text);
+}
+
+.light .update-lists .list-name h2 {
     padding: 1% 2% 0 0;
     font-size: 26px;
     margin: 10px 15px 10px 0;
+    color: var(--light-theme-primary-text);
 } 
 
-.update-lists .edit-list-name input {
+.light .update-lists .edit-list-name {
+    color: var(--light-theme-primary-text);
+}
+
+.light .update-lists .edit-list-desc {
+    color: var(--light-theme-primary-text);
+}
+
+.light .update-lists .edit-list-name input {
     padding: 1% 2% 0 0;
     border-bottom: 1px solid;
     border-top: none;
@@ -20,21 +35,21 @@
     margin: 10px 15px 10px 0;
 }
 
-.update-lists .edit-list-name button {
+.light .update-lists .edit-list-name button {
     
-    background: #302f32;
+    background: var(--light-theme-header);
     border: none;
-    color: white;
+    color: var(--light-theme-primary-text);
     padding: 1%;
     border-radius: 5px;
 }
 
-.update-lists .list-desc p {
+.light .update-lists .list-desc p {
     padding: 1% 2% 0 0;
     margin: 10px 15px 10px 0;
 }
 
-.update-lists .edit-list-desc input {
+.light .update-lists .edit-list-desc input {
     padding: 1% 2% 0 0;
     border-bottom: 1px solid;
     border-top: none;
@@ -43,44 +58,52 @@
     margin: 10px 15px 10px 0;
 }
 
-.update-lists .edit-list-desc button {
-    background: #302f32;
+.light .update-lists .edit-list-desc button {
+    background: var(--light-theme-header);
     border: none;
-    color: white;
+    color: var(--light-theme-primary-text);
     padding: 1%;
     border-radius: 5px;   
 }
 
-table {
-    width: 80%;
+.light table {
+    width: 100%;
     margin: 20px 0;
-    border: 1px solid purple;
+    border: 1px solid var(--light-theme-header);
     border-radius: 15px;
 }
 
-table td, th {
+.light table td, th {
     padding: 2%;
+    word-wrap: break-word;
 }
 
-table th {
-    background-color: black;
+.light table th {
+    background-color: var(--light-theme-header);
     color: white;
 }
 
-table td {
-    border-top: 1px solid purple;
+.light table td {
+    border-top: 1px solid var(--light-theme-header);
     width: 100px;
 }
 
-table td input {
+.light table td input {
     width: 100%;
 }
 
-.task-form {
-    margin: 15% 0 0 0;
-    background: #8568bf;
+.light .edit-task-button {
+    background: var(--light-theme-header);
     border: none;
-    color: white;
+    color: var(--light-theme-primary-text);
+    padding: 1% 2%;
+    border-radius: 5px;   
+}
+.light .task-form {
+    margin: 15% 0 0 0;
+    background: var(--light-theme-secondary-background);
+    border: none;
+    color: var(--light-theme-primary-text);
     padding: 10% 5%;
     border-radius: 15px;
     display: flex;
@@ -88,23 +111,181 @@ table td input {
     align-items: center;
 }
 
-.task-form .task-form-item {
+.light .task-form .task-form-item {
     margin: 10px 0;
+    width: 100%;
 }
 
-.task-form .task-form-item input {
-    background: #e1e1fa;
+.light .task-form .task-form-item input {
+    background: none;
     border: 1px solid;
     border-radius: 10px;
     width: 100%;
     padding: 5px 10px;
 }
 
-.task-form button {
+.light .task-form button {
     margin: 10% 0 0 0;
-    background: #302f32;
+    background: var(--light-theme-header);
     border: none;
-    color: white;
+    color: var(--light-theme-primary-text);
+    padding: 3% 5%;
+    border-radius: 15px;
+}
+
+
+/* Dark theme */
+
+
+.dark .update-lists {
+    padding: 2% 5%;
+    height: 100vh;
+    background: var(--dark-theme-primary-background);
+}
+
+.dark .update-lists .list-name h2 {
+    padding: 1% 2% 0 0;
+    font-size: 26px;
+    margin: 10px 15px 10px 0;
+    color: var(--dark-theme-primary-text);
+    
+} 
+
+.dark .update-lists .edit-button {
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
+   height: max-content;
+    border-radius: 5px;
+}
+
+.dark .update-lists .list-name {
+    color: var(--dark-theme-primary-text);   
+}
+
+.dark .home h1 {
+    color: var(--dark-theme-secondary-text);
+}
+
+.dark .home p {
+    color: var(--dark-theme-secondary-text);
+}
+
+.dark .update-lists .edit-list-name input {
+    padding: 1% 2% 0 0;
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 26px;
+    margin: 10px 15px 10px 0;
+}
+
+.dark .update-lists .edit-list-name button {
+    
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.dark .update-lists .list-desc p {
+    padding: 1% 2% 0 0;
+    margin: 10px 15px 10px 0;
+    color: var(--dark-theme-primary-text);  
+}
+
+
+.dark .update-lists .edit-list-name {
+    color: var(--dark-theme-secondary-text);
+}
+
+.dark .update-lists .edit-list-desc {
+    color: var(--dark-theme-secondary-text);
+}
+
+.dark .update-lists .edit-list-desc input {
+    padding: 1% 2% 0 0;
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 10px 15px 10px 0;
+}
+
+.dark .update-lists .edit-list-desc button {
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
+    padding: 1%;
+    border-radius: 5px;   
+}
+
+.dark table {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid var(--dark-theme-header);
+    border-radius: 15px;
+}
+
+.dark table td, th {
+    padding: 2%;
+    word-wrap: break-word;
+}
+
+.dark table th {
+    background-color: var(--dark-theme-header);
+    color: var(--dark-theme-secondary-text);
+}
+
+.dark table td {
+    border-top: 1px solid var(--dark-theme-header);
+    width: 100px;
+    background-color: var(--dark-theme-secondary-background);
+}
+
+.dark table td input {
+    width: 100%;
+}
+
+.dark .edit-task-button {
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
+    padding: 1% 2%;
+    border-radius: 5px;   
+}
+.dark .task-form {
+    margin: 15% 0 0 0;
+    background: var(--dark-theme-secondary-background);
+    border: none;
+    color: var(--dark-theme-header);
+    padding: 10% 5%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark .task-form .task-form-item {
+    margin: 10px 0;
+    width: 100%;
+}
+
+.dark .task-form .task-form-item input {
+    background: none;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.dark .task-form button {
+    margin: 10% 0 0 0;
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
     padding: 3% 5%;
     border-radius: 15px;
 }

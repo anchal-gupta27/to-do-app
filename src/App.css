@@ -1,4 +1,24 @@
-.App {
-  text-align: center;
+:root  {
+  --light-theme-header: #6bc3d6;
+  --light-theme-primary-background: #f5f5f7;
+  --light-theme-secondary-background: #dce9ef;
+  --light-theme-primary-text: #083c4c;
+  --light-theme-secondary-text: #c4561a;
+  --light-theme-tertiary-text: #6e6e73;
+
+  --dark-theme-header: #585858;
+  --dark-theme-primary-background: #000;
+  --dark-theme-secondary-background: #a0a0a0;
+  --dark-theme-primary-text: #a4a4a4;
+  --dark-theme-secondary-text: #a49e9a;
+  --dark-theme-tertiary-text: #a9a9b8;
+  --dark-theme-text-black: #000
 }
 
+
+.toggle-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border-radius: 20px;
+}

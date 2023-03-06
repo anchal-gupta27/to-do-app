@@ -1,28 +1,33 @@
-.create-list {
+@import url("../../App.css");
+
+.light .create-list {
     padding: 2% 5%;
-    background: #efe3f8;
+    background: var(--light-theme-primary-background);
     height: 100vh;
 }
 
-.lists a {
+.light .lists a {
     text-decoration: none;
     display: flex;
     justify-content: center;
 
 }
 
-.lists h2 {
-    color: #6d21d3;
+.light .lists h2 {
+    color: var(--light-theme-tertiary-text);
     text-align: center;
 }
 
-.lists .list-items {
+.light .lists .list-items {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.lists .list-container {
-    padding: 10px 10px;
-    border: 1px solid #812fc9;
+.light .lists .list-container {
+   
+    border: 1px solid var(--light-theme-primary-text) ;
     border-radius: 15px;
     text-align: center;
     color: black;
@@ -32,18 +37,17 @@
     width: 70%;
 }
 
-.lists .list-container:hover {
-    background-color: white;
-    color: black;
+.light .lists .list-container a {
+   
+    color: var(--light-theme-secondary-text);
    
 }
 
-.list-form {
+.light .list-form {
     margin: 15% 0 0 0;
-    background: #8568bf;
+    background: var(--light-theme-secondary-background);
     border: none;
-    color: white;
-    padding: 10% 5%;
+    color: var(--light-theme-primary-text);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -51,23 +55,145 @@
 
 }
 
-.list-form .list-form-item  {
+.light .list-form .list-form-header {
+    width: 100%;
+    text-align: center;
+    background: var(--light-theme-header);
+    border-radius: 15px 15px 0 0;
+    padding: 5%;
+}
+
+.light .list-form .list-form-details {
+    padding: 5%;
+}
+
+.light .list-form .list-form-item  {
     margin: 10px 0;
 }
 
-.list-form .list-form-item input {
-    background: #e1e1fa;
+
+
+.light .list-form .list-form-item input {
+    background: none;
     border: 1px solid;
     border-radius: 10px;
     width: 100%;
     padding: 5px 10px;
 }
 
-.list-form button {
-    margin: 10% 0 0 0;
-    background: #302f32;
+.light .list-form button {
+    background: var(--light-theme-header);
     border: none;
-    color: white;
+    color: var(--light-theme-primary-text);
     padding: 3% 5%;
     border-radius: 15px;
+}
+
+.light .delete-button button {
+    color: rgb(241, 89, 89);
+}
+
+.light .delete-button:hover button {
+    font-size: larger;
+}
+
+/* Dark Theme */
+
+.dark .create-list {
+    padding: 2% 5%;
+    background: var(--dark-theme-primary-background);
+    height: 100vh;
+}
+
+.dark .lists a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.dark .lists h2 {
+    color: var(--dark-theme-tertiary-text);
+    text-align: center;
+}
+
+.dark .lists .list-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark .lists .list-container {
+   
+    border: 1px solid var(--dark-theme-primary-text) ;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 2% 5%;
+    width: 70%;
+}
+
+.dark .lists .list-container a {
+   
+    color: var(--dark-theme-secondary-text);
+   
+}
+
+.dark .list-form {
+    margin: 15% 0 0 0;
+    background: var(--dark-theme-secondary-background);
+    border: none;
+    color: var(--dark-theme-primary-text);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.dark .list-form .list-form-header {
+    width: 100%;
+    text-align: center;
+    background: var(--dark-theme-header);
+    border-radius: 15px 15px 0 0;
+    padding: 5%;
+}
+
+.dark .list-form .list-form-details {
+    padding: 5%;
+}
+
+.dark .list-form .list-form-item  {
+    margin: 10px 0;
+}
+
+.dark .list-form .list-form-item label {
+    color:var(--dark-theme-text-black)
+}
+
+.dark .list-form .list-form-item input {
+    background: none;
+    border: 1px solid ;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.dark .list-form button {
+    background: var(--dark-theme-header);
+    border: none;
+    color: var(--dark-theme-primary-text);
+    padding: 3% 5%;
+    border-radius: 15px;
+}
+
+.dark .delete-button button {
+    color: rgb(241, 89, 89);
+}
+
+.dark .delete-button:hover button {
+    font-size: larger;
 }

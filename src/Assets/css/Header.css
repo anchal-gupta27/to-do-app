@@ -1,7 +1,17 @@
-.header {
-    padding: 2%;
-    color: white;
-    background-color: #7d3cb9;
+@import url("../../App.css");
+
+.light .header {
+    padding: 1%;
+    color: var(--light-theme-primary-text);
+    background-color: var(--light-theme-header);
+    font-weight: 600;
+   
+}
+
+.dark .header {
+    padding: 1%;
+    color: var(--dark-theme-primary-text);
+    background-color: var(--dark-theme-header);
     font-weight: 600;
    
 }
