@@ -17,6 +17,7 @@ You will also see any lint errors in the console.
 ### `npm run json-server`
 
 Starts the json-server used as fake database.
+The server starts at post 3004
 
 ### `npm test`
 
